@@ -206,7 +206,10 @@ if st.session_state.texts:
 
         # Common settings
         st.header("5. Settings")
-        n_topics = st.slider("Number of topics:", min_value=2, max_value=50, value=8)
+        # Scale slider max based on corpus size
+        _n_docs = len(st.session_state.texts) if st.session_state.texts else 100
+        _max_topics_slider = 100 if _n_docs >= 5000 else 50
+        n_topics = st.slider("Number of topics:", min_value=2, max_value=_max_topics_slider, value=8)
 
         # LLM topic labeling
         st.subheader("LLM Topic Labeling")
@@ -256,8 +259,22 @@ if st.session_state.texts:
                     "Auto-detect optimal topics (Python perplexity/coherence)",
                     value=not r_available,
                 )
-                lda_settings["min_k"] = st.number_input("Min topics (tuning):", 2, 50, 2)
-                lda_settings["max_k"] = st.number_input("Max topics (tuning):", 2, 50, 20)
+                # Scale max topic range based on corpus size
+                n_docs = len(st.session_state.texts) if st.session_state.texts else 100
+                if n_docs >= 10000:
+                    max_k_upper, max_k_default = 100, 100
+                elif n_docs >= 5000:
+                    max_k_upper, max_k_default = 100, 50
+                elif n_docs >= 1000:
+                    max_k_upper, max_k_default = 75, 30
+                else:
+                    max_k_upper, max_k_default = 50, 20
+
+                lda_settings["min_k"] = st.number_input("Min topics (tuning):", 2, max_k_upper, 2)
+                lda_settings["max_k"] = st.number_input(
+                    "Max topics (tuning):", 2, max_k_upper, max_k_default,
+                    help=f"Corpus has {n_docs} documents. Evaluating up to {max_k_default} topics.",
+                )
                 lda_settings["max_features"] = st.number_input("Max vocabulary size:", 1000, 50000, 5000)
                 lda_settings["max_iter"] = st.number_input("Max iterations:", 10, 200, 50)
                 lda_settings["n_top_words"] = st.number_input("Top words per topic:", 5, 30, 15)
