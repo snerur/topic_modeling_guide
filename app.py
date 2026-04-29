@@ -517,7 +517,7 @@ if st.session_state.texts and "run_button" in dir() and run_button:
         )
         from utils.embeddings import get_embedding_model
 
-        emb_model = None
+        emb_model = "all-MiniLM-L6-v2"  # fallback for internal BERTopic ops
         if "SBERT" in embedding_model:
             emb_model = get_embedding_model(embedding_model)
 

@@ -249,6 +249,11 @@ def plot_cluster_network(masterlist_result: Dict[str, Any],
         for _, row in topic_df.iterrows()
     ]
 
+    # Map cluster IDs to qualitative colors
+    import plotly.express as px
+    palette = px.colors.qualitative.Set1
+    marker_colors = [palette[int(c) % len(palette)] for c in clusters]
+
     fig.add_trace(go.Scatter(
         x=x_pos.tolist(), y=y_pos.tolist(),
         mode="markers+text",
@@ -259,9 +264,7 @@ def plot_cluster_network(masterlist_result: Dict[str, Any],
         hoverinfo="text",
         marker=dict(
             size=14,
-            color=clusters.tolist(),
-            colorscale="Set1",
-            showscale=False,
+            color=marker_colors,
             line=dict(width=1, color="white"),
         ),
     ))
