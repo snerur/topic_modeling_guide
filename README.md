@@ -236,7 +236,7 @@ Blei, D. M., Ng, A. Y., & Jordan, M. I. (2003). **Latent Dirichlet Allocation.**
 Grootendorst, M. (2022). **BERTopic: Neural topic modeling with a class-based TF-IDF procedure.** *arXiv preprint arXiv:2203.05794*. [PDF](https://arxiv.org/pdf/2203.05794)
 
 ### BunkaTopics
-Mahieddine, C. (2024). **Bunka: Robust and Explainable Large Language Models Cartography.** *arXiv preprint arXiv:2406.06574*. [PDF](https://arxiv.org/pdf/2406.06574)
+de Dampierre, C., Mogoutov, A., and Baumard, N. (2024). **Bunka: Robust and Explainable Large Language Models Cartography.** *arXiv preprint arXiv:2406.06574*. [PDF](https://arxiv.org/pdf/2406.06574)
 
 ### Turftopic
 Kardos, M., Kostkan, J., Vermillet, A., Nielbo, K., Enevoldsen, K., & Rocca, R. (2025). **Turftopic: Topic Modelling with Contextual Representations from Sentence Transformers.** *Journal of Open Source Software*. [PDF](https://joss.theoj.org/papers/10.21105/joss.08183.pdf)
