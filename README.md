@@ -225,6 +225,27 @@ Three built-in synthetic datasets for experimentation:
 
 ---
 
+## Algorithm Acknowledgments
+
+This software integrates topic modeling algorithms developed by other researchers. We gratefully acknowledge the original authors of these algorithms. If you use this software, please cite the original papers for the underlying methods:
+
+### LDA (Latent Dirichlet Allocation)
+Blei, D. M., Ng, A. Y., & Jordan, M. I. (2003). **Latent Dirichlet Allocation.** *Journal of Machine Learning Research*, 3, 993–1022. [PDF](https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)
+
+### BERTopic
+Grootendorst, M. (2022). **BERTopic: Neural topic modeling with a class-based TF-IDF procedure.** *arXiv preprint arXiv:2203.05794*. [PDF](https://arxiv.org/pdf/2203.05794)
+
+### BunkaTopics
+Mahieddine, C. (2024). **Bunka: Robust and Explainable Large Language Models Cartography.** *arXiv preprint arXiv:2406.06574*. [PDF](https://arxiv.org/pdf/2406.06574)
+
+### Turftopic
+Kardos, M., Kostkan, J., Vermillet, A., Nielbo, K., Enevoldsen, K., & Rocca, R. (2025). **Turftopic: Topic Modelling with Contextual Representations from Sentence Transformers.** *Journal of Open Source Software*. [PDF](https://joss.theoj.org/papers/10.21105/joss.08183.pdf)
+
+### Structural Topic Modeling (STM)
+Roberts, M. E., Stewart, B. M., Tingley, D., Lucas, C., Leder-Luis, J., Gadarian, S. K., Albertson, B., & Rand, D. G. (2014). **Structural Topic Models for Open-Ended Survey Responses.** *American Journal of Political Science*, 58(4), 1064–1082. [PDF](https://gregoryeady.com/SocialMediaDataCourse/assets/readings/Text_Analysis_II/Roberts,%20Margaret%20E.%20et%20al.%20-%202014%20-%20Structural%20Topic%20Models%20for%20Open-Ended%20Survey%20Responses.pdf)
+
+---
+
 ## Citation
 
 If you use this software in academic research, please acknowledge the source:
